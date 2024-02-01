@@ -58,7 +58,7 @@ async function record(
 		const receiver = connection.receiver;
 		users.forEach((user:any)=> {
 			if(user.user.id === "1194971976914178079") return
-			console.log(user)
+			console.log(`Recording ${user.user.username}`)
 			createListeningStream(receiver, user.user.id, user.user.username);
 		});
 
@@ -68,7 +68,7 @@ async function record(
 	}
 }
 
-async function leave(
+async function exit(
 	interaction: CommandInteraction,
 	recordable: Set<Snowflake>,
 	_client: Client,
@@ -94,4 +94,4 @@ export const interactionHandlers = new Map<
 >();
 interactionHandlers.set('join', join);
 interactionHandlers.set('record', record);
-interactionHandlers.set('leave', leave);
+interactionHandlers.set('exit', exit);

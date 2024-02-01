@@ -1,0 +1,7 @@
+package-lock.json
+config.json
+tsconfig.tsbuildinfo
+recordings/*.pcm
+models/*
+dist
+node_modules

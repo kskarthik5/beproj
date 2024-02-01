@@ -12,7 +12,7 @@ export const deploy = async (guild: Guild) => {
 			description: 'Enables recording for a user',
 		},
 		{
-			name: 'leave',
+			name: 'exit',
 			description: 'Leave the voice channel',
 		},
 	]);
