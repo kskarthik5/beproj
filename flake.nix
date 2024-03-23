@@ -42,7 +42,7 @@
         ];
 
         shellHook = ''
-            export LD_LIBRARY_PATH="${geos}/lib:${gdal}/lib:${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.linuxPackages.nvidia_x11}/lib"
+            export LD_LIBRARY_PATH="${pkgs.geos}/lib:${pkgs.gdal}/lib:${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.linuxPackages.nvidia_x11}/lib"
             SOURCE_DATE_EPOCH=$(date +%s)  # so that we can use python wheels
             YELLOW='\033[1;33m'
             NC="$(printf '\033[0m')"
