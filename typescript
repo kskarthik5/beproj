@@ -1,0 +1,30 @@
+Script started on 2024-03-24 11:42:57+05:30 [COMMAND="nix-shell --impure" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+this derivation will be built:
+  /nix/store/dr60npvl4kxlv1v96h60lwdm1dz1b8kc-cudatoolkit-11.8.0.drv
+building '/nix/store/dr60npvl4kxlv1v96h60lwdm1dz1b8kc-cudatoolkit-11.8.0.drv'...
+Sourcing auto-add-opengl-runpath-hook
+Using autoAddOpenGLRunpathPhase
+Sourcing setup-cuda-hook
+Executing setupCUDAToolkitCompilers
+qtPreHook
+unpacking sources
+Creating directory pkg
+/nix/store/pnjyl1yrlw63vypaypnp948gir430fk6-cuda_11.8.0_520.61.05_linux.run: line 226: /dev/tty: No such device or address
+/nix/store/pnjyl1yrlw63vypaypnp948gir430fk6-cuda_11.8.0_520.61.05_linux.run: line 226: /dev/tty: No such device or address
+Terminated
+[31;1merror:[0m builder for '[35;1m/nix/store/dr60npvl4kxlv1v96h60lwdm1dz1b8kc-cudatoolkit-11.8.0.drv[0m' failed with exit code 143;
+       last 10 log lines:
+       > Sourcing auto-add-opengl-runpath-hook
+       > Using autoAddOpenGLRunpathPhase
+       > Sourcing setup-cuda-hook
+       > Executing setupCUDAToolkitCompilers
+       > qtPreHook
+       > unpacking sources
+       > Creating directory pkg
+       > /nix/store/pnjyl1yrlw63vypaypnp948gir430fk6-cuda_11.8.0_520.61.05_linux.run: line 226: /dev/tty: No such device or address
+       > /nix/store/pnjyl1yrlw63vypaypnp948gir430fk6-cuda_11.8.0_520.61.05_linux.run: line 226: /dev/tty: No such device or address
+       > Terminated
+       For full logs, run '[1mnix log /nix/store/dr60npvl4kxlv1v96h60lwdm1dz1b8kc-cudatoolkit-11.8.0.drv[0m'.
+       note: build failure may have been caused by lack of free disk space
+
+Script done on 2024-03-24 11:43:50+05:30 [COMMAND_EXIT_CODE="1"]

@@ -1,19 +1,16 @@
-# 👂 Recorder Bot
 
-This example shows how you can use the voice receive functionality in @discordjs/voice to record users in voice channels
-and save the audio to local Ogg files.
+# Pre-requisites
 
-## Usage
+Install ```nix```
 
-```sh-session
-# Clone the examples repository, copy the `recorder` files in a folder and then run:
-$ npm install
-$ npm run build
+# Usage
 
-# Set a bot token (see config.example.json)
-$ cp config.example.json config.json
-$ nano config.json
+## Set a bot token (see config.example.json)
+```cp config.example.json config.json```
 
-# Start the bot!
-$ npm start
-```
+ ```nano config.json```
+## Enter development environment
+```NIXPKGS_ALLOW_UNFREE=1 nix-shell --impure```
+
+## Start the bot!
+```npm start```

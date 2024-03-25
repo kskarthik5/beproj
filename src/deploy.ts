@@ -15,5 +15,17 @@ export const deploy = async (guild: Guild) => {
 			name: 'exit',
 			description: 'Leave the voice channel',
 		},
+		{
+			name: 'transcript',
+			description: 'Leave the voice channel',
+		},
+		{
+			name: 'summary',
+			description: 'Leave the voice channel',
+		},
+		{
+			name: 'gist',
+			description: 'Leave the voice channel',
+		},
 	]);
 };

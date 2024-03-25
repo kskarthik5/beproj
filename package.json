@@ -4,7 +4,8 @@
 	"description": "An example receiver bot written using @discordjs/voice",
 	"main": "dist/bot.js",
 	"scripts": {
-		"start": "npm run build && node dist/bot",
+		"kill": "pkill node & pkill python",
+		"start": "npm run build && node dist/bot & python -m flask --app conversation-summ run --port=7000",
 		"lint": "prettier --cache --check . && eslint src --ext mjs,js,ts --cache",
 		"format": "prettier --cache --write . && eslint src --ext mjs,js,ts --fix --cache",
 		"build": "rimraf dist && tsc",
@@ -16,6 +17,7 @@
 		"@discordjs/opus": "^0.8.0",
 		"@discordjs/voice": "^0.11.0",
 		"@types/vosk": "^0.3.1",
+		"axios": "^1.6.8",
 		"discord.js": "^13.10.3",
 		"libsodium-wrappers": "^0.7.10",
 		"node-crc": "^1.3.2",

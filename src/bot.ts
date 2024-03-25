@@ -3,7 +3,6 @@ import { GatewayIntentBits } from 'discord-api-types/v10';
 import { Interaction, Constants, Client } from 'discord.js';
 import { deploy } from './deploy';
 import { interactionHandlers } from './interactions';
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
 const { token } = require('../config.json') as { token: string };
 
@@ -13,15 +12,22 @@ const client = new Client({
 
 const { Events } = Constants;
 
-client.on(Events.CLIENT_READY, () =>{
-   console.log('Ready!')
+client.on(Events.CLIENT_READY, async() => {
+	console.log('Bot Ready! Testing other endpoints')
+	let url = "http://127.0.0.1:7000/";
+	let test=await fetch(url, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}).then(response => response.json());
+	console.log(test)
 }
- );
+);
 
- client.on(Events.MESSAGE_CREATE, async (message) => {
+client.on(Events.MESSAGE_CREATE, async (message) => {
 	if (!message.guild) return;
 	if (!client.application?.owner) await client.application?.fetch();
-    
 	if (message.content.toLowerCase() === '!deploy' && message.author.id === client.application?.owner?.id) {
 		console.log("hi")
 		await deploy(message.guild);

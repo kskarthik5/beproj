@@ -5,3 +5,4 @@ recordings/*.pcm
 models/*
 dist
 node_modules
+conversation-summ/__pycache__

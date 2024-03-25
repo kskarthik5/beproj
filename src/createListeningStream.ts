@@ -3,6 +3,7 @@ import { EndBehaviorType, VoiceReceiver } from '@discordjs/voice';
 // import type { User } from 'discord.js';
 import * as prism from 'prism-media';
 import vosk from 'vosk';
+import { transcripted } from './transcriptStore';
 const model: vosk.Model = new vosk.Model('models/vosk-model-en-in-0.5');
 const param: vosk.BaseRecognizerParam = { model: model, sampleRate: 16000 }
 vosk.setLogLevel(0);
@@ -23,7 +24,17 @@ export function createListeningStream(receiver: VoiceReceiver, userId: string, u
 	decoder.on('data', (data) => {
 		let end_of_speech:any = rec.acceptWaveform(data);
 		if (end_of_speech) {
-			console.log(userName+": "+rec.result()["text"]);
+			let tst=rec.result()["text"]
+			if(tst.trim().length == 0) return
+			if(transcripted.text.at(-1)?.startsWith(userName)){
+				transcripted.text[transcripted.text.length-1]+="\n"+tst
+				console.log(tst)
+			}
+			else{
+				let res=userName+": "+tst
+				transcripted.text.push(res)
+				console.log(res);
+			}
 		} else {
 			// console.log(JSON.stringify(rec.partialResult(), null, 4));
 		}
