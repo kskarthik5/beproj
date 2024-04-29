@@ -41,7 +41,7 @@ pkgs.mkShell {
       virtualenv --no-setuptools venv > /dev/null
       export PATH=$PWD/venv/bin:$PATH > /dev/null
       pip install -r requirements.txt > /dev/null
-      source venv/bin/activate
+      source $PWD/venv/bin/activate
    '';          
 }
 
